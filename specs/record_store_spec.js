@@ -20,4 +20,7 @@ describe("RecordStore", function(){
   it("should have an inventory which starts empty", function(){
     assert.strictEqual(recordStore.inventory.length, 0)
   })
+  it("should have a balance which starts at zero", function(){
+    assert.strictEqual(recordStore.balance, 0)
+  })
 })
