@@ -3,12 +3,16 @@ var Record = require("../record.js");
 var RecordStore = require("../record_store.js");
 
 describe("RecordStore", function(){
-  var record;
+  var record1;
+  var record2;
+  var record3;
   var recordStore;
 
   beforeEach(function(){
-    record = new Record("Artist1", "Title1", "Rock", 19.99)
     recordStore = new RecordStore("Kelsie's Record Store", "Glasgow")
+    var record1 = new Record("Artist1", "Title1", "Rock", 19.99)
+    var record2 = new Record("Artist1", "Title1", "Rock", 19.99)
+    var record3 = new Record("Artist1", "Title1", "Rock", 19.99)
   })
 
   it("should have a name", function(){
@@ -22,5 +26,13 @@ describe("RecordStore", function(){
   })
   it("should have a balance which starts at zero", function(){
     assert.strictEqual(recordStore.balance, 0)
+  })
+  it("should be able to add records to inventory", function(){
+    
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+
+    assert.strictEqual(recordStore.inventory.length, 3)
   })
 })
