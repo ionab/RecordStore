@@ -40,8 +40,13 @@ Customer.prototype.recordsByValue = function () {
   return this.collection.sort(function(a, b){
     return b.price - a.price;
   })
+};
 
-
+Customer.prototype.getMostValubleRecord = function () {
+  let sortedRecords = this.collection.sort(function(a, b){
+    return b.price - a.price;
+  })
+  return sortedRecords[0];
 };
 
 

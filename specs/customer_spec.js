@@ -73,8 +73,12 @@ describe("Customer", function(){
     record6 = new Record("Artist1", "Title1", "Rock", 7)
     customer.buyRecord(record6);
     assert.strictEqual(customer.recordsByValue()[0], record6)})
-  // xit ('should be able to see their most valued record', function(){
-  // assert.strictEqual(,)})
+  it ('should be able to see their most valued record', function(){
+    record5 = new Record("Artist1", "Title1", "Rock", 4)
+    customer.buyRecord(record5);
+    record6 = new Record("Artist1", "Title1", "Rock", 7)
+    customer.buyRecord(record6);
+    assert.strictEqual(customer.getMostValubleRecord(), record6)})
   // xit ('should be able to compare value of their collection with another collection', function(){
   // assert.strictEqual(,)})
 
