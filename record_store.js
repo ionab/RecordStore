@@ -31,4 +31,12 @@ RecordStore.prototype.finnancialSituation = function () {
   })
   return finnancialSituation;
 };
+
+RecordStore.prototype.searchByGenre = function (genre) {
+  return this.inventory.filter(function(record){
+    return record.genre === genre;
+  })
+};
+
+
 module.exports = RecordStore;

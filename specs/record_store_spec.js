@@ -70,6 +70,11 @@ describe("RecordStore", function(){
     recordStore.addRecord(record3);
     recordStore.sellRecord(record1);
     assert.strictEqual(recordStore.finnancialSituation(), 59.97)
-
+  })
+  it("should be able to search records by genre", function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    assert.strictEqual(recordStore.searchByGenre("Rock").length, 3)
   })
 })
