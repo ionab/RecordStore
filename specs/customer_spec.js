@@ -39,8 +39,8 @@ describe("Customer", function(){
   assert.strictEqual(customer.collection.length, 0)})
   it ('should have cash which starts at fifty //const', function(){
   assert.strictEqual(customer.cash, 50)})
-  // xit ('should have collection which starts as empty //const', function(){
-  // assert.strictEqual(,)})
+  it ('should have collection which starts as empty //const', function(){
+  assert.strictEqual(customer.collection.length, 0)})
   // xit ('should not be able to buy record if they cant afford xit', function(){
   // assert.strictEqual(,)})
   // xit ('should increase cash  when record returned', function(){
