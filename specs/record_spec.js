@@ -19,7 +19,10 @@ describe("Record", function(){
     assert.strictEqual(record.genre, "Rock")
   })
   it("should have a price", function(){
-    assert.deepEqual(record.price, 19.99)
+    assert.strictEqual(record.price, 19.99)
+  })
+  it("should return the properties as a string", function(){
+    assert.strictEqual(record.printPropertiesAsString(), "Artist: Artist1, Title: Title1, Genre: Rock, Price: 19.99")
   })
 
 })
