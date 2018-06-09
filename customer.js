@@ -34,7 +34,16 @@ Customer.prototype.collectionValueByGenre = function (genre) {
     };
   })
   return genreCollectionValue;
+};
+
+Customer.prototype.recordsByValue = function () {
+  return this.collection.sort(function(a, b){
+    return b.price - a.price;
+  })
+
 
 };
+
+
 
 module.exports = Customer;

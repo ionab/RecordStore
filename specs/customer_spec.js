@@ -11,6 +11,8 @@ describe("Customer", function(){
   var recordStore;
   var customer;
   var record4;
+  var record5;
+  var record6;
 
   beforeEach(function(){
     customer = new Customer("Kelsie")
@@ -42,7 +44,7 @@ describe("Customer", function(){
     assert.strictEqual(customer.cash, 50)})
   it ('should have collection which starts as empty //const', function(){
     assert.strictEqual(customer.collection.length, 0)})
-  it ('should not be able to buy record if they cant afford xit', function(){
+  it ('should not be able to buy record if they cant afford it', function(){
     record4 = new Record("Artist1", "Title1", "Rock", 100)
     customer.buyRecord(record4);
   assert.strictEqual(customer.collection.length, 0)})
@@ -64,9 +66,14 @@ describe("Customer", function(){
     customer.buyRecord(record2);
     customer.buyRecord(record3);
     assert.strictEqual(customer.collectionValueByGenre("Rock"), 49.97)})
+  it ('should be able to sort their records by value', function(){
+
+    record5 = new Record("Artist1", "Title1", "Rock", 4)
+    customer.buyRecord(record5);
+    record6 = new Record("Artist1", "Title1", "Rock", 7)
+    customer.buyRecord(record6);
+    assert.strictEqual(customer.recordsByValue()[0], record6)})
   // xit ('should be able to see their most valued record', function(){
-  // assert.strictEqual(,)})
-  // xit ('should be able to sort their records by value', function(){
   // assert.strictEqual(,)})
   // xit ('should be able to compare value of their collection with another collection', function(){
   // assert.strictEqual(,)})
