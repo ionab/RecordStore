@@ -55,4 +55,21 @@ describe("RecordStore", function(){
     recordStore.sellRecord(record1);
     assert.strictEqual(recordStore.inventory.length, 2)
   })
+
+  it("should increase record store balance by the cost of the sold record", function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    recordStore.sellRecord(record1);
+    assert.strictEqual(recordStore.balance, 19.99)
+  })
+
+  it("should be able to return the finnancial situation of the store", function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    recordStore.sellRecord(record1);
+    assert.strictEqual(recordStore.finnancialSituation(), 59.97)
+
+  })
 })

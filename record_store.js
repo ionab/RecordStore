@@ -17,13 +17,18 @@ RecordStore.prototype.printStock = function () {
 
 
 RecordStore.prototype.sellRecord = function (soldRecord) {
+  this.balance += soldRecord.price;
   this.inventory = this.inventory.filter(function(record){
     return record !== soldRecord;
   })
   return this.inventory;
-
 };
 
-
-// write sell record method
+RecordStore.prototype.finnancialSituation = function () {
+  let finnancialSituation = this.balance;
+  this.inventory.forEach(function(record){
+    return finnancialSituation += record.price;
+  })
+  return finnancialSituation;
+};
 module.exports = RecordStore;
