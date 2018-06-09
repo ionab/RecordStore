@@ -59,8 +59,11 @@ describe("Customer", function(){
     customer.buyRecord(record2);
     customer.buyRecord(record3);
     assert.strictEqual(customer.collectionValue(), 49.97)})
-  // xit ('should be able to view the total value of record collection by genre', function(){
-  // assert.strictEqual(,)})
+  it ('should be able to view the total value of record collection by genre', function(){
+    customer.buyRecord(record1);
+    customer.buyRecord(record2);
+    customer.buyRecord(record3);
+    assert.strictEqual(customer.collectionValueByGenre("Rock"), 49.97)})
   // xit ('should be able to see their most valued record', function(){
   // assert.strictEqual(,)})
   // xit ('should be able to sort their records by value', function(){

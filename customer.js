@@ -27,4 +27,14 @@ Customer.prototype.collectionValue = function () {
   return collectionValue;
 };
 
+Customer.prototype.collectionValueByGenre = function (genre) {
+  let genreCollectionValue = 0; this.collection.forEach(function(record){
+    if (record.genre === genre){
+      genreCollectionValue += record.price;
+    };
+  })
+  return genreCollectionValue;
+
+};
+
 module.exports = Customer;
