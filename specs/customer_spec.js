@@ -10,13 +10,14 @@ describe("Customer", function(){
   var record3;
   var recordStore;
   var customer;
+  var record4;
 
   beforeEach(function(){
     customer = new Customer("Kelsie")
     recordStore = new RecordStore("Kelsie's Record Store", "Glasgow")
     record1 = new Record("Artist1", "Title1", "Rock", 19.99)
     record2 = new Record("Artist1", "Title1", "Rock", 19.99)
-    record3 = new Record("Artist1", "Title1", "Rock", 19.99)
+    record3 = new Record("Artist1", "Title1", "Rock", 9.99)
 
     recordStore.addRecord(record1);
     recordStore.addRecord(record2);
@@ -41,8 +42,10 @@ describe("Customer", function(){
   assert.strictEqual(customer.cash, 50)})
   it ('should have collection which starts as empty //const', function(){
   assert.strictEqual(customer.collection.length, 0)})
-  // xit ('should not be able to buy record if they cant afford xit', function(){
-  // assert.strictEqual(,)})
+  it ('should not be able to buy record if they cant afford xit', function(){
+    record4 = new Record("Artist1", "Title1", "Rock", 100)
+    customer.buyRecord(record4);
+  assert.strictEqual(customer.collection.length, 0)})
   // xit ('should increase cash  when record returned', function(){
   // assert.strictEqual(,)})
   // xit ('should decrease cash when record bought', function(){

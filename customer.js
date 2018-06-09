@@ -6,8 +6,10 @@ var Customer = function(name){
 }
 
 Customer.prototype.buyRecord = function(record){
-  this.cash -= record.price;
-  this.collection.push(record);
+  if (this.cash >= record.price){
+    this.cash -= record.price;
+    this.collection.push(record);
+  }
 };
 
 Customer.prototype.returnRecord = function(recordToReturn){
