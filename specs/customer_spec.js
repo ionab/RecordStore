@@ -46,10 +46,15 @@ describe("Customer", function(){
     record4 = new Record("Artist1", "Title1", "Rock", 100)
     customer.buyRecord(record4);
   assert.strictEqual(customer.collection.length, 0)})
-  // xit ('should increase cash  when record returned', function(){
-  // assert.strictEqual(,)})
-  // xit ('should decrease cash when record bought', function(){
-  // assert.strictEqual(,)})
+  it ('should decrease cash when record bought', function(){
+    customer.buyRecord(record1);
+    assert.strictEqual(customer.cash, 30.01);})
+  it ('should increase cash when record returned', function(){
+    customer.buyRecord(record1);
+    assert.strictEqual(customer.cash, 30.01);
+    customer.returnRecord(record1);
+    assert.strictEqual(customer.cash, 50)})
+
   // xit ('should be able to view the total value of record collection', function(){
   // assert.strictEqual(,)})
   // xit ('should be able to view the total value of record collection by genre', function(){
