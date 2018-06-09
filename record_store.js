@@ -9,4 +9,10 @@ RecordStore.prototype.addRecord = function(record) {
   this.inventory.push(record);
 };
 
+RecordStore.prototype.printStock = function () {
+  return this.inventory.map(function(record){
+    return record.printPropertiesAsString();
+  })
+};
+
 module.exports = RecordStore;
