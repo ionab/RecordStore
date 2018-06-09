@@ -47,4 +47,12 @@ describe("RecordStore", function(){
     recordStore.addRecord(record3);
     assert.strictEqual(recordStore.printStock(), [record1.printPropertiesAsString(),record2.printPropertiesAsString(),record3.printPropertiesAsString()])
   })
+
+  it("should decrease size of inventory when record is sold", function(){
+    recordStore.addRecord(record1);
+    recordStore.addRecord(record2);
+    recordStore.addRecord(record3);
+    recordStore.sellRecord(record1);
+    assert.strictEqual(recordStore.inventory.length, 2)
+  })
 })

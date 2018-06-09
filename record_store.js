@@ -15,4 +15,15 @@ RecordStore.prototype.printStock = function () {
   })
 };
 
+
+RecordStore.prototype.sellRecord = function (soldRecord) {
+  this.inventory = this.inventory.filter(function(record){
+    return record !== soldRecord;
+  })
+  return this.inventory;
+
+};
+
+
+// write sell record method
 module.exports = RecordStore;
