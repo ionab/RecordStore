@@ -17,7 +17,14 @@ Customer.prototype.returnRecord = function(recordToReturn){
   this.collection = this.collection.filter(function(record){
     return record !== recordToReturn;
   })
-
 }
+
+Customer.prototype.collectionValue = function () {
+  let collectionValue = 0
+  this.collection.forEach(function(record){
+    collectionValue += record.price;
+  })
+  return collectionValue;
+};
 
 module.exports = Customer;

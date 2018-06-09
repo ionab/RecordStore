@@ -32,16 +32,16 @@ describe("Customer", function(){
     customer.buyRecord(record1);
     customer.buyRecord(record2);
     customer.buyRecord(record3);
-  assert.strictEqual(customer.collection.length, 3)})
+    assert.strictEqual(customer.collection.length, 3)})
   it ('should be able to return records //const', function(){
     customer.buyRecord(record1);
     assert.strictEqual(customer.collection.length, 1);
     customer.returnRecord(record1);
-  assert.strictEqual(customer.collection.length, 0)})
+    assert.strictEqual(customer.collection.length, 0)})
   it ('should have cash which starts at fifty //const', function(){
-  assert.strictEqual(customer.cash, 50)})
+    assert.strictEqual(customer.cash, 50)})
   it ('should have collection which starts as empty //const', function(){
-  assert.strictEqual(customer.collection.length, 0)})
+    assert.strictEqual(customer.collection.length, 0)})
   it ('should not be able to buy record if they cant afford xit', function(){
     record4 = new Record("Artist1", "Title1", "Rock", 100)
     customer.buyRecord(record4);
@@ -54,9 +54,11 @@ describe("Customer", function(){
     assert.strictEqual(customer.cash, 30.01);
     customer.returnRecord(record1);
     assert.strictEqual(customer.cash, 50)})
-
-  // xit ('should be able to view the total value of record collection', function(){
-  // assert.strictEqual(,)})
+  it ('should be able to view the total value of record collection', function(){
+    customer.buyRecord(record1);
+    customer.buyRecord(record2);
+    customer.buyRecord(record3);
+    assert.strictEqual(customer.collectionValue(), 49.97)})
   // xit ('should be able to view the total value of record collection by genre', function(){
   // assert.strictEqual(,)})
   // xit ('should be able to see their most valued record', function(){
