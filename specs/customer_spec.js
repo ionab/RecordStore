@@ -27,9 +27,11 @@ describe("Customer", function(){
   assert.strictEqual(customer.name, "Kelsie");
   })
 
-  //
-  // xit ('should be able to buy records //const', function(){
-  // assert.strictEqual(,)})
+  it ('should be able to buy records //const', function(){
+    customer.buyRecord(record1);
+    customer.buyRecord(record2);
+    customer.buyRecord(record3);
+  assert.strictEqual(customer.collection.length, 3)})
   // xit ('should be able to return records //const', function(){
   // assert.strictEqual(,)})
   // xit ('should have cash which starts at fifty //const', function(){
