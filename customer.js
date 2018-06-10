@@ -49,6 +49,10 @@ Customer.prototype.getMostValubleRecord = function () {
   return sortedRecords[0];
 };
 
+Customer.prototype.compareValue = function (otherPerson) {
+  return "My collection value is: £" + this.collectionValue() +", the other persons collection value is: £" + otherPerson.collectionValue()
+
+};
 
 
 module.exports = Customer;

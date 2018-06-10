@@ -10,6 +10,7 @@ describe("Customer", function(){
   var record3;
   var recordStore;
   var customer;
+  var customer2;
   var record4;
   var record5;
   var record6;
@@ -79,7 +80,18 @@ describe("Customer", function(){
     record6 = new Record("Artist1", "Title1", "Rock", 7)
     customer.buyRecord(record6);
     assert.strictEqual(customer.getMostValubleRecord(), record6)})
-  // xit ('should be able to compare value of their collection with another collection', function(){
-  // assert.strictEqual(,)})
+  it ('should be able to compare value of their collection with another collection', function(){
+    customer.buyRecord(record1);
+    customer.buyRecord(record2);
+    customer.buyRecord(record3);
+
+    customer2 = new Customer("Natalie")
+    record5 = new Record("Artist1", "Title1", "Rock", 4)
+    customer2.buyRecord(record5);
+    record6 = new Record("Artist1", "Title1", "Rock", 7)
+    customer2.buyRecord(record6);
+
+    assert.strictEqual(customer.compareValue(customer2), "My collection value is: £49.97, the other persons collection value is: £11")
+  })
 
 })
